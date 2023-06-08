@@ -32,7 +32,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
+  desafioae:
     # Applies to all files under models/example/
-    example:
-      materialized: view
+    marts:
+      +materialized: table
+      +schema: marts
+
+      intermediate:
+        +materialized: table
+
+    staging:
+      +materialized: view
+      +schema: staging
+
+seeds:
+  desafioae:
+    source:
+      +schema: source_aw
