@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: dbt_lineker98
+    tables:
+      - name: product
+        description: teste
+      - name: productcategory
+        description: teste
+      - name: productsubcategory
+        description: teste
+      - name: creditcard
+        description: teste
+      - name: salesorderheadersalesreason
+        description: teste
+      - name: salesperson
+        description: teste
+      - name: customer
+        description: teste
+      - name: person
+        description: teste
+      - name: address
+        description: teste
+      - name: stateprovince
+        description: teste
+      - name: countryregion
+        description: teste
