@@ -4,7 +4,7 @@ with
             stateprovinceid
             , stateprovincecode
             , countryregioncode
-            , isonlystateprovinceflag	
+            , cast(isonlystateprovinceflag	as boolean) as isonlystateprovinceflag
             , name
             , territoryid
             --, rowguid
