@@ -64,7 +64,7 @@ sources:
               - not_null
       - name: salesorderheadersalesreason
         description: teste
-      - name: salesperson
+      - name: salesreason
         description: teste
       - name: customer
         description: teste
