@@ -9,14 +9,14 @@ sources:
         columns:
           - name: productid
             description: >
-                Primary key related with each product
+              Primary key related with each product
             tests:
               - unique
               - not_null
 
           - name: productsubcategoryid
             description: >
-                Primary key of productsubcategory table
+              Primary key of productsubcategory table
             tests:
               - not_null
 
@@ -41,14 +41,27 @@ sources:
             tests:
               - unique
               - not_null
-          
+
           - name: productcategoryid
             description: >
               Primary key for productcategory table.
             tests:
               - not_null
       - name: creditcard
-        description: teste
+        description: >
+          Table to store the credict card informations used for each order.
+        columns:
+          - name: creditcardid
+            description: >
+              Primary key for each record.
+            tests:
+              - unique
+              - not_null
+          - name: cardtype
+            description: >
+              Type of credit card
+            tests:
+              - not_null
       - name: salesorderheadersalesreason
         description: teste
       - name: salesperson
