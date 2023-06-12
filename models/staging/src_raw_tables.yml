@@ -4,11 +4,49 @@ sources:
   - name: dbt_lineker98
     tables:
       - name: product
-        description: teste
+        description: >
+          One record per product. Includes product detail and descriptions about its manufacturing process.
+        columns:
+          - name: productid
+            description: >
+                Primary key related with each product
+            tests:
+              - unique
+              - not_null
+
+          - name: productsubcategoryid
+            description: >
+                Primary key of productsubcategory table
+            tests:
+              - not_null
+
       - name: productcategory
-        description: teste
+        description: >
+          Contains only the product category for each unique id.
+        columns:
+          - name: productcategoryid
+            description: >
+              Primary key for each category type.
+            tests:
+              - unique
+              - not_null
+
       - name: productsubcategory
-        description: teste
+        description: >
+          Table to give more information about each category.
+        columns:
+          - name: productsubcategoryid
+            description: >
+              Primary key for each subcategory product.
+            tests:
+              - unique
+              - not_null
+          
+          - name: productcategoryid
+            description: >
+              Primary key for productcategory table.
+            tests:
+              - not_null
       - name: creditcard
         description: teste
       - name: salesorderheadersalesreason

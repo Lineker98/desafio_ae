@@ -2,6 +2,8 @@ with
     products as (
         select
             productid
+            , productsubcategoryid
+            , productmodelid
             , name
             , productnumber
             , cast(makeflag as boolean) as makeflag
@@ -19,8 +21,6 @@ with
             , productline
             , class
             , style					
-            , productsubcategoryid
-            , productmodelid
             , cast(SUBSTR(sellstartdate, 1, 10) as date) as sellstartdate
             , cast(SUBSTR(sellenddate, 1, 10) as date) as sellenddate
             , discontinueddate
