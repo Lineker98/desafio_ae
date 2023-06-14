@@ -257,5 +257,5 @@ sources:
           - name: name
             description: Country or region name.
             tests:
-              - not_null:
+              - not_null
                   
