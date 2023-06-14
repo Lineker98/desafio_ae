@@ -3,63 +3,100 @@ version: 2
 sources:
   - name: dbt_lineker98
     tables:
+      - name: salesorderheader
+        description: table with general information for each order
+        columns:
+          - name: salesorderid
+            description: Primary key related with each order informations
+            tests:
+              - unique
+              - not_null
+          - name: orderdate
+            description: Registred date of each order
+            tests: 
+              - not_null
+          - name: duedate
+            description: Order due date
+            tests:
+              - not_null
+          - name: shipdate
+            description: Order shipping date
+            tests:
+              - not_null
+          - name: customerid
+            description: Primary key of customer table
+            tests:
+              - not_null
+          - name: territoryid
+            description: Primary key of salesterritory table
+            tests:
+              - not_null
+          - name: billtoaddressid
+            description: Primary key of address table
+            tests:
+              - not_null
+          - name: shiptoaddressid
+            description: Primary key of address table
+            tests:
+              - not_null
+          - name: creditcardid
+            description: Primary key of creditcard table
+            tests:
+              - not_null
+          - name: subtotal
+            description: Subtotal order spent
+          - name: taxamt
+            description: IDK
+          - name: freight
+            description: Total spent for freight
+          - name: totaldue
+            description: Sum of subtotal, taxamt and freight tables
       - name: product
-        description: >
-          One record per product. Includes product detail and descriptions about its manufacturing process.
+        description: One record per product. Includes product detail and descriptions about its manufacturing process.
         columns:
           - name: productid
-            description: >
-              Primary key related with each product
+            description: Primary key related with each product
             tests:
               - unique
               - not_null
 
           - name: productsubcategoryid
-            description: >
-              Primary key of productsubcategory table
+            description: Primary key of productsubcategory table
             tests:
               - not_null
 
       - name: productcategory
-        description: >
-          Contains only the product category for each unique id.
+        description: Contains only the product category for each unique id.
         columns:
           - name: productcategoryid
-            description: >
-              Primary key for each category type.
+            description: Primary key for each category type.
             tests:
               - unique
               - not_null
 
       - name: productsubcategory
-        description: >
-          Table to give more information about each category.
+        description: Table to give more information about each category.
         columns:
           - name: productsubcategoryid
-            description: >
-              Primary key for each subcategory product.
+            description: Primary key for each subcategory product.
             tests:
               - unique
               - not_null
 
           - name: productcategoryid
-            description: >
-              Primary key for productcategory table.
+            description: Primary key for productcategory table.
             tests:
               - not_null
       - name: creditcard
-        description: >
-          Table to store the credict card informations used for each order.
+        description: Table to store the credict card informations used for each order.
         columns:
           - name: creditcardid
-            description: >
-              Primary key for each record.
+            description: Primary key for each record.
             tests:
               - unique
               - not_null
           - name: cardtype
-            description: >
-              Type of credit card
+            description: Type of credit card
             tests:
               - not_null
       - name: salesorderheadersalesreason
