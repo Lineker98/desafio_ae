@@ -8,8 +8,8 @@ with
             , shiptoaddressid
             , creditcardid
             , revisionnumber			
-            , orderdate		
-            , duedate		
+            , cast(SUBSTR(orderdate, 1, 10) as date) as orderdate		
+            , cast(SUBSTR(duedate, 1, 10) as date) as duedate
             , cast(SUBSTR(shipdate, 1, 10) as date) as shipdate
             , cast(subtotal	as FLOAT64) as subtotal	
             , cast(taxamt as FLOAT64) as taxamt
