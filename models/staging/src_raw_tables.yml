@@ -52,19 +52,45 @@ sources:
           - name: totaldue
             description: Sum of subtotal, taxamt and freight tables
       - name: product
-        description: One record per product. Includes product detail and descriptions about its manufacturing process.
+        description: One record per product. Includes product details and descriptions about its manufacturing process.
         columns:
           - name: productid
-            description: Primary key related with each product
+            description: Primary key related for product records.
             tests:
               - unique
               - not_null
-
           - name: productsubcategoryid
-            description: Primary key of productsubcategory table
+            description: Primary key of productsubcategory table.
             tests:
               - not_null
-
+          - name: name
+            description: Name of the product.
+            tests:
+              - not_null
+          - name: productnumber
+            description: Unique product identification number.
+            tests:
+              - not_null
+          - name: makeflag
+            description: 0 = product is purchasd, 1 = product is manufacturing in house.
+          - name: finishedgoodsflag
+            description: 0 = product is not salable, 1 = Product is salable.
+          - name: safetystocklevel
+            description: Minimum inventory quantity.
+          - name: standardcost
+            description: Standard cost of the product
+            tests:
+              - not_null
+          - name: listprice
+            description: Selling price.
+          - name: daystomanufacture
+            description: Number of days required to manufacture the product.
+          - name: productline
+            description: The line of the product. R = Road, M = Mountain, T = Touring, S = Standard.
+          - name: sellstartdate
+            description: The date when the product is available to be saled.
+          - name: sellenddate
+            description: The date that the product was no longer available to be saled.
       - name: productcategory
         description: Contains only the product category for each unique id.
         columns:
@@ -73,7 +99,8 @@ sources:
             tests:
               - unique
               - not_null
-
+          - name: name
+            description: Category description
       - name: productsubcategory
         description: Table to give more information about each category.
         columns:
@@ -82,11 +109,12 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: productcategoryid
-            description: Primary key for productcategory table.
+            description: Primary key of productcategory table
             tests:
               - not_null
+          - name: name
+            description: Subcategory description.
       - name: creditcard
         description: Table to store the credict card informations used for each order.
         columns:
@@ -96,20 +124,138 @@ sources:
               - unique
               - not_null
           - name: cardtype
-            description: Type of credit card
+            description: Credit card description.
             tests:
               - not_null
       - name: salesorderheadersalesreason
-        description: teste
+        description: Map sales orders to sales reason codes.
+        columns:
+          - name: salesorderid
+            description: Primary key for salesorder table.
+            tests:
+              - not_null
+          - name: salesreasonid	
+            description: Primary key for salesreason table
+            tests:
+              - not_null
       - name: salesreason
-        description: teste
+        description: Customer purchase reasons.
+        columns:
+          - name: salesreasonid
+            description: Primary key for each reason.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Sales reason description
+            tests:
+              - not_null
+          - name: reasontype
+            description: Category the sales reason belongs to.
+            tests:
+              - not_null
       - name: customer
-        description: teste
+        description: Customer informations
+        columns:
+          - name: customerid
+            description: Primary key for each customer.
+            tests:
+              - unique
+              - not_null
+          - name: personid
+            description: Primary key for person table.
+            tests:
+              - unique
+          - name: storeid
+            description: Primary key for store table.
+            tests:
+              - unique
+          - name: territoryid
+            description: ID of the territory in which the customer is located.
       - name: person
-        description: teste
+        description: Human beings involved with AdventureWorks, like employees, customer contacts, and vendor contacts.
+        columns:
+          - name: businessentityid
+            description: Primary key for each person records
+            tests:
+              - unique
+              - not_null
+          - name: persontype
+            description: Primary type of person 
+            tests:
+              - not_null
+          - name: title	
+            description: A courtesy title. For example, Mr. or Ms.
+          - name: firstname
+            description: First name of the person
+            tests:
+              - not_null
+          - name: middlename.
+            description: Middle name of the person.
+          - name: lastname.
+            description: Last name of the person.
       - name: address
-        description: teste
+        description: address information for customers, employees, and vendors.
+        columns:
+          - name: addressid
+            description: Primary key for each address record.
+            tests:
+              - unique
+              - not_null
+          - name: addressline1
+            description: Frist street address line.
+            tests:
+              - not_null
+          - name: addressline2
+            description: Second street address line
+            tests:
+              - not_null
+          - name: city
+            description: Name of the city.
+            tests:
+              - not_null
+          - name: stateprovinceid
+            description: Unique identification number for the state or province. Primary key for stateprovince table.
+            tests:
+              - not_null
       - name: stateprovince
-        description: teste
+        description: State and province.
+        columns:
+          - name: stateprovinceid
+            description: Primary key for each record.
+            tests:
+              - unique
+              - not_null
+          - name: stateprovincecode
+            description: Standard state or province code
+            tests:
+              - unique
+              - not_null
+          - name: countryregioncode
+            description: Primary key for countryregioncode table
+            tests:
+              - unique
+              - not_null
+          - name: isonlystateprovinceflag
+            description: 0 = stateprovincecode exists. 1 = stateprovinceCode unavailable, using countryregionCode
+          - name: name
+            description: Province description
+            tests:
+              - not_null
+          - name: territoryid
+            description: ID of the territory in which the state or province is located. Primary key of salesterritoryID
+            tests:
+              - not_null
       - name: countryregion
-        description: teste
+        description: Standard codes for countries and regions.
+        columns:
+          - name: countryregioncode
+            description: Standard code for countries and regions.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Country or region name.
+            tests:
+              - not_null:
+                  

@@ -2,12 +2,12 @@ with
     person as (
         select
             businessentityid		
-            , persontype	
-            , cast(namestyle as boolean) as namestyle	
+            , persontype		
             , title	
             , firstname	
             , middlename	
-            , lastname	
+            , lastname
+            --, namestyle
             --, suffix	
             --, emailpromotion		
             --, additionalcontactinfo	
