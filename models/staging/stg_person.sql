@@ -1,7 +1,7 @@
 with
     person as (
         select
-            businessentityid		
+            businessentityid as businessentity_id		 
             , persontype		
             , title	
             , firstname	

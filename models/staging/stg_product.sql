@@ -1,8 +1,8 @@
 with
     product as (
         select
-            productid
-            , productsubcategoryid
+            productid as product_id
+            , productsubcategoryid as productsubcategory_id
             , name
             , productnumber
             , cast(makeflag as boolean) as makeflag

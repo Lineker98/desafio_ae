@@ -25,7 +25,7 @@ with
             , product.productline
             , product.sellstartdate
             , product.sellenddate
-        from {{ ref("stg_products") }} as product
+        from {{ ref("stg_product") }} as product
         left join product_subcategory on product.productsubcategoryid = product_subcategory.productsubcategoryid
         left join product_category  on product_subcategory.productcategoryid = product_category.productcategoryid
     )

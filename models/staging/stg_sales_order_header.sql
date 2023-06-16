@@ -1,12 +1,11 @@
 with
     sales_order_header as (
         select
-            salesorderid	
-            , customerid
-            , territoryid
-            , billtoaddressid
-            , shiptoaddressid
-            , creditcardid
+            salesorderid as salesorder_id
+            , customerid as customer_id
+            , billtoaddressid as billtoaddress_id
+            , shiptoaddressid as shiptoaddress_id
+            , creditcardid as creditcard_id
             , revisionnumber			
             , cast(SUBSTR(orderdate, 1, 10) as date) as orderdate		
             , cast(SUBSTR(duedate, 1, 10) as date) as duedate
@@ -15,6 +14,7 @@ with
             , cast(taxamt as FLOAT64) as taxamt
             , cast(freight as FLOAT64) as freight		
             , totaldue
+            -- , territoryid as territory_id
             --, status			
             --, onlineorderflag	
             --, purchaseordernumber		

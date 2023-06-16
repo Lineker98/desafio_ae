@@ -1,7 +1,7 @@
 with
     product_category as (
         select
-            productcategoryid		
+            productcategoryid	as productcategory_id	
             , name
             --, rowguid
             --, modifieddate

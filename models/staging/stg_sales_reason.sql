@@ -1,7 +1,7 @@
 with
     sales_reason as (
         select
-            salesreasonid		
+            salesreasonid as salesreason_id		
             , name			
             , reasontype			
             --, modifieddate

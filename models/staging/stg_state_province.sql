@@ -1,12 +1,12 @@
 with
     state_province as (
         select
-            stateprovinceid
+            stateprovinceid as stateprovince_id
             , stateprovincecode
             , countryregioncode
             , cast(isonlystateprovinceflag	as boolean) as isonlystateprovinceflag
             , name
-            , territoryid
+            -- , territoryid
             --, rowguid
             --, modifieddate
 
