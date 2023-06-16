@@ -30,9 +30,9 @@ with
         left join product_category  on product_subcategory.productcategoryid = product_category.productcategoryid
     )
 
-    , tranformed as (
+    , transformed as (
         select 
-            row_number() over (order by productid) as product_id
+            row_number() over (order by productid) as product_sk
             , *
         from product
     )
