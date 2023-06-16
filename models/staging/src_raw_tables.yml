@@ -194,6 +194,18 @@ sources:
             description: Middle name of the person.
           - name: lastname.
             description: Last name of the person.
+      - name: store
+        description: Customers (resellers) of Adventure Works products.
+        columns:
+          - name: name
+            description: Name of the store.
+            tests:
+              - not_null
+          - name: salespersonid
+            description: ID of the sales person assigned to the customer.
+            tests:
+              - unique
+              - not_null
       - name: address
         description: address information for customers, employees, and vendors.
         columns:
