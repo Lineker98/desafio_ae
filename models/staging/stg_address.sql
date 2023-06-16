@@ -1,11 +1,11 @@
 with
     address as (
         select 
-            addressid
+            addressid as address_id
             , addressline1
             , addressline2
             , city
-            , stateprovinceid
+            , stateprovinceid as stateprovince_id
             --, postalcode
             --, spatiallocation
             --, rowguid

@@ -27,10 +27,6 @@ sources:
             description: Primary key of customer table
             tests:
               - not_null
-          - name: territoryid
-            description: Primary key of salesterritory table
-            tests:
-              - not_null
           - name: billtoaddressid
             description: Primary key of address table
             tests:
@@ -252,10 +248,6 @@ sources:
             description: 0 = stateprovincecode exists. 1 = stateprovinceCode unavailable, using countryregionCode
           - name: name
             description: Province description
-            tests:
-              - not_null
-          - name: territoryid
-            description: ID of the territory in which the state or province is located. Primary key of salesterritoryID
             tests:
               - not_null
       - name: countryregion

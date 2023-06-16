@@ -1,8 +1,8 @@
 with 
     products_subcategory as (
         select
-            productsubcategoryid
-            , productcategoryid
+            productsubcategoryid as productsubcategory_id
+            , productcategoryid as productcategory_id
             , name
             -- , rowguid
             -- , modifieddate
