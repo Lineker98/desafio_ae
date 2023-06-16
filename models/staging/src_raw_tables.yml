@@ -47,6 +47,28 @@ sources:
             description: Total spent for freight
           - name: totaldue
             description: Sum of subtotal, taxamt and freight tables
+      - name: salesorderdetail
+        description: Individual products associated with a specific sales order.
+        columns:
+          - name: salesorderid
+            description: Primary key for salesorderheader table.
+            tests:
+              - not_null
+          - name: salesorderdetail
+            description: One incremental unique number per product sold
+            tests:
+              - unique
+              - not_null
+          - name: orderqty
+            description: Quantity ordered per product
+          - name: productid
+            description: product sold to customer. Primary key to product table.
+          - name: specialofferid
+            description: Promotional code
+          - name: unitprice
+            description: Selling price of a single product
+          - name: unitpricediscount
+            description: Discount amount
       - name: product
         description: One record per product. Includes product details and descriptions about its manufacturing process.
         columns:
