@@ -7,7 +7,6 @@ with
         select *
         from {{ ref('stg_store') }}
     )
-
     , customer as (
         select 
             customer.customer_id

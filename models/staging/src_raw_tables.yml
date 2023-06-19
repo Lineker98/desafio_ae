@@ -63,8 +63,6 @@ sources:
             description: Quantity ordered per product
           - name: productid
             description: product sold to customer. Primary key to product table.
-          - name: specialofferid
-            description: Promotional code
           - name: unitprice
             description: Selling price of a single product
           - name: unitpricediscount

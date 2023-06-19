@@ -5,9 +5,9 @@ with
             , salesorderdetailid as salesorderdetail_id			
             , orderqty			
             , productid as product_id
-            , specialofferid as specialodder_id	
             , unitprice			
             , unitpricediscount
+            --, specialofferid as specialodder_id	
             --, carriertrackingnumber				
             --, rowguid				
             --, modifieddate
