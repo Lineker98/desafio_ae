@@ -93,8 +93,6 @@ sources:
             description: Standard cost of the product
             tests:
               - not_null
-          - name: listprice
-            description: Selling price.
           - name: daystomanufacture
             description: Number of days required to manufacture the product.
           - name: productline

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: dim_creditcard
+      columns:
+        - name: creditcard_sk
+          description: The surrogate key of credict card
+          tests:
+            - unique
+            - not_null
+        - name: creditcard_id
+          description: The primary key of the credit card
+          tests:
+            - unique
+            - not_null
+        - name: cardtype
+          description: The type of each credit card
+          tests:
+            - not_null

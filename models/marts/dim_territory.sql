@@ -13,7 +13,6 @@ with
             , address.addressline1
             , address.addressline2
             , address.city
-            , address.stateprovince_id
             , state_province.name as state_name
             , state_province.stateprovincecode as state_code
             , state_province.countryregioncode as country_code

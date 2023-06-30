@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_sk
+        description: The surrogate key of the customer.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: The primary key of the customer.
+        tests:
+          - not_null
+      - name: store_name
+        description: The customer's store name
+      - name: name
+        description: The full customer's name
+      - name: firstname
+        description: The customer's first name
+      - name: middlename
+        description: The customer's middle name
+      - name: lastname
+        description: The customer's last name
