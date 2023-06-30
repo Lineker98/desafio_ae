@@ -30,7 +30,6 @@ with
             , bill_to.address_sk as bill_to_address_fk
             , ship_to.address_sk as ship_to_address_fk
             , creditcard.creditcard_sk as creditcard_fk
-            , orders.revisionnumber			
             , orders.orderdate		
             , orders.duedate
             , orders.shipdate
