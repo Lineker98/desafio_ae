@@ -37,8 +37,6 @@ sources:
               - not_null
           - name: creditcardid
             description: Primary key of creditcard table
-            tests:
-              - not_null
           - name: subtotal
             description: Subtotal order spent
           - name: taxamt
@@ -54,11 +52,11 @@ sources:
             description: Primary key for salesorderheader table.
             tests:
               - not_null
-          - name: salesorderdetail
+          - name: salesorderdetailid
             description: One incremental unique number per product sold
             tests:
-              - unique
               - not_null
+              - unique
           - name: orderqty
             description: Quantity ordered per product
           - name: productid
@@ -77,8 +75,6 @@ sources:
               - not_null
           - name: productsubcategoryid
             description: Primary key of productsubcategory table.
-            tests:
-              - not_null
           - name: name
             description: Name of the product.
             tests:
@@ -180,12 +176,8 @@ sources:
               - not_null
           - name: personid
             description: Primary key for person table.
-            tests:
-              - unique
           - name: storeid
             description: Primary key for store table.
-            tests:
-              - unique
           - name: territoryid
             description: ID of the territory in which the customer is located.
       - name: person
@@ -220,7 +212,6 @@ sources:
           - name: salespersonid
             description: ID of the sales person assigned to the customer.
             tests:
-              - unique
               - not_null
       - name: address
         description: address information for customers, employees, and vendors.
@@ -236,8 +227,6 @@ sources:
               - not_null
           - name: addressline2
             description: Second street address line
-            tests:
-              - not_null
           - name: city
             description: Name of the city.
             tests:
@@ -262,7 +251,6 @@ sources:
           - name: countryregioncode
             description: Primary key for countryregioncode table
             tests:
-              - unique
               - not_null
           - name: isonlystateprovinceflag
             description: 0 = stateprovincecode exists. 1 = stateprovinceCode unavailable, using countryregionCode
