@@ -11,16 +11,10 @@ with
         select
             product.product_id
             , product.name as product_name
-            , product.productsubcategory_id
             , product_subcategory.name as subcategory_name
-            , product_category.productcategory_id
             , product_category.name as category_name
-            , product.productnumber
             , product.makeflag
-            , product.finishedgoodsflag
             , product.safetystocklevel
-            , product.standardcost
-            , product.listprice
             , product.daystomanufacture
             , product.productline
             , product.sellstartdate
