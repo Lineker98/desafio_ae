@@ -11,7 +11,6 @@ with
         select 
             customer.customer_id
             , store.store_name
-            , concat(person.title, person.firstname, person.middlename, person.lastname) as complete_name
             , person.firstname as firstname
             , person.middlename as middlename
             , person.lastname as lastname
