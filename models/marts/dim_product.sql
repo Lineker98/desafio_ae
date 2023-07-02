@@ -9,30 +9,24 @@ with
 
     , product as (
         select
-            product.productid
+            product.product_id
             , product.name as product_name
-            , product.productsubcategoryid
             , product_subcategory.name as subcategory_name
-            , product_category.productcategoryid
             , product_category.name as category_name
-            , product.productnumber
             , product.makeflag
-            , product.finishedgoodsflag
             , product.safetystocklevel
-            , product.standardcost
-            , product.listprice
             , product.daystomanufacture
             , product.productline
             , product.sellstartdate
             , product.sellenddate
         from {{ ref("stg_product") }} as product
-        left join product_subcategory on product.productsubcategoryid = product_subcategory.productsubcategoryid
-        left join product_category  on product_subcategory.productcategoryid = product_category.productcategoryid
+        left join product_subcategory on product.productsubcategory_id = product_subcategory.productsubcategory_id
+        left join product_category  on product_subcategory.productcategory_id = product_category.productcategory_id
     )
 
     , transformed as (
         select 
-            row_number() over (order by productid) as product_sk
+            row_number() over (order by product_id) as product_sk
             , *
         from product
     )

@@ -1,14 +1,14 @@
 with 
     creditcard as (
         select 
-            creditcardid
+            creditcard_id
             , cardtype
 
         from {{ ref('stg_creditcard') }}
     )
     , transformed as (
         select
-            row_number() over (order by creditcardid) as creditcard_sk
+            row_number() over (order by creditcard_id) as creditcard_sk
             , *
         from creditcard
     )

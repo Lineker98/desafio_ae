@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_product
+    columns:
+      - name: product_sk
+        description: The surrogate key for product
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        description: The primary key for product
+        tests:
+          - not_null
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+      - name: subcategory_name
+        description: The name of product subcategory
+      - name: category_name
+        description: The name of the product category
+      - name: makeflag
+        description: 0 = product is purchasd, 1 = product is manufacturing in house.
+      - name: safetystocklevel
+        description: Minimum inventory quantity.
+      - name: productline
+        description: The line of the product. R = Road, M = Mountain, T = Touring, S = Standard.
+      - name: daystomanufacture
+        description: Number of days required to manufacture the product.
+      - name: sellstartdate
+        description: The date when the product is available to be saled.
+      - name: sellenddate
+        description: The date that the product was no longer available to be saled.
+          
