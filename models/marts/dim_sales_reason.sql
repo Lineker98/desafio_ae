@@ -15,7 +15,7 @@ with
 
     , transformed as (
         select 
-            row_number() over (order by salesorder_id) as sales_order_sk
+            row_number() over (order by salesorder_id) as sales_reason_sk
             , *
         from sales_order_header_sales_reason
     )
