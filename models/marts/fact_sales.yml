@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fact_sales
+    columns:
+      - name: salesorder_id
+        description: Primary key related with each order informations
+        tests:
+          - not_null
+      - name: customer_fk
+        description: Foreign key for customer dim
+        tests:
+          - not_null
+          - relationships:
+              field: customer_sk
+              to: ref('dim_customers')
+      - name: bill_to_address_fk
+        description: Foreign key to territory dim
+        tests:
+          - not_null
+          - relationships:
+              field: address_sk
+              to: ref('dim_territory')
+      - name: ship_to_address_fk
+        description: Foreign key to territory dim
+        tests:
+          - not_null
+          - relationships:
+              field: address_sk
+              to: ref('dim_territory')
+      - name: creditcard_fk
+        description: Foreign key to credict card dim
+        tests:
+          - relationships:
+              field: creditcard_sk
+              to: ref('dim_creditcard')
+      - name: orderdate	
+        description: Registred date of each order
+        tests:
+          - not_null
+      - name: duedate
+        description: Order due date
+        tests:
+          - not_null
+      - name: shipdate
+        description: Order shipping date
+        tests:
+          - not_null
+      - name: subtotal
+        description: Purchase order subtotal
+        tests:
+          - not_null
+      - name: taxamt
+        description: Tax amount in that transaction
+        tests:
+          - not_null
+      - name: freight
+        description: Freight in that transaction
+        tests:
+          - not_null
+      - name: totaldue
+        description: Total due to vendor. Computed as Subtotal + TaxAmt + Freight.
+        tests:
+          - not_null

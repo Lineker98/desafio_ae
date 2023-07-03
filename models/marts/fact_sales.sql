@@ -30,7 +30,6 @@ with
             , bill_to.address_sk as bill_to_address_fk
             , ship_to.address_sk as ship_to_address_fk
             , creditcard.creditcard_sk as creditcard_fk
-            , orders.revisionnumber			
             , orders.orderdate		
             , orders.duedate
             , orders.shipdate
@@ -62,7 +61,6 @@ with
             , orders_with_sk.bill_to_address_fk
             , orders_with_sk.ship_to_address_fk
             , orders_with_sk.creditcard_fk
-            , orders_with_sk.revisionnumber			
             , orders_with_sk.orderdate		
             , orders_with_sk.duedate
             , orders_with_sk.shipdate
