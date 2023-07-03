@@ -32,4 +32,3 @@ models:
         description: The date when the product is available to be saled.
       - name: sellenddate
         description: The date that the product was no longer available to be saled.
-          

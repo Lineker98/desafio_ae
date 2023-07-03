@@ -62,5 +62,3 @@ models:
         description: Total due to vendor. Computed as Subtotal + TaxAmt + Freight.
         tests:
           - not_null
-
-          

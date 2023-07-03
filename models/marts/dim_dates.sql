@@ -3,7 +3,7 @@ with dates as (
 )
     
 select 
-    dates.date_day as full_date
+    dates.date_day as complete_date
     , dates.year_number
     , dates.day_of_week_iso as day_of_week
     , dates.day_of_week_name

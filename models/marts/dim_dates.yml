@@ -3,7 +3,7 @@ version: 2
 models:
   - name: dim_dates
     columns:
-      - name: full_date
+      - name: complete_date
         description: The date as yyyy-mm-dd
         tests:
           - not_null
@@ -39,7 +39,3 @@ models:
         description: The abreviation of month name
         tests:
           - not_null
-          
-
-          
-          
