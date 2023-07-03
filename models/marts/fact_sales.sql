@@ -57,6 +57,7 @@ with
     , final as (
         select
             orders_with_sk.salesorder_id
+            , orders_detail_with_sk.salesorderdetail_id	
             , orders_with_sk.customer_fk
             , orders_with_sk.bill_to_address_fk
             , orders_with_sk.ship_to_address_fk
@@ -67,8 +68,7 @@ with
             , orders_with_sk.subtotal	
             , orders_with_sk.taxamt
             , orders_with_sk.freight		
-            , orders_with_sk.totaldue
-            , orders_detail_with_sk.salesorderdetail_id			
+            , orders_with_sk.totaldue		
             , orders_detail_with_sk.orderqty			
             , orders_detail_with_sk.product_fk
             , orders_detail_with_sk.unitprice			
