@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_territory
+    columns:
+      - name: address_sk
+        description: The surrogate key for address
+        tests:
+          - not_null
+          - unique
+      - name: address_id
+        description: The primary key for address
+        tests:
+          - not_null
+      - name: addressline1
+        description: Frist street address line.
+        tests:
+          - not_null
+      - name: addressline2
+        description: Second street address line
+      - name: city
+        description: Name of the city.
+        tests:
+          - not_null
+      - name: state_name
+        description: Unique identification number for the state or province.
+        tests:
+          - not_null
+      - name: state_code
+        description: Standard state or province code
+        tests:
+          - not_null
+      - name: country_code
+        description: The country code eg. abreviation
+        tests:
+          - not_null
+      - name: country_name
+        description: The complete country name
+        tests:
+          - not_null

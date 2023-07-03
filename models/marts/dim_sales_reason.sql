@@ -7,7 +7,6 @@ with
     , sales_order_header_sales_reason as (
         select 
             sales_order_reason.salesorder_id			
-            , sales_order_reason.salesreason_id
             , sales_reason.name as sales_reason_name
             , sales_reason.reasontype as reason_type
         from {{ ref('stg_sales_order_header_sales_reason') }} as sales_order_reason

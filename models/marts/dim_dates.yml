@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_dates
+    columns:
+      - name: complete_date
+        description: The date as yyyy-mm-dd
+        tests:
+          - not_null
+      - name: year_number
+        description: Only the year of date
+        tests:
+          - not_null
+      - name: day_of_week
+        description: The day of the week, being sunday as last day of the week
+        tests:
+          - not_null
+      - name: day_of_week_name
+        description: The complete name of week day
+        tests:
+          - not_null
+      - name: day_of_week_name_short
+        description: The abreviation of week day name
+        tests:
+          - not_null
+      - name: day_of_month
+        description: The day of the related month
+        tests:
+          - not_null
+      - name: month_of_year
+        description: The month of the related year
+        tests:
+          - not_null
+      - name: month_name
+        description: The complete month name
+        tests:
+          - not_null
+      - name: month_name_short
+        description: The abreviation of month name
+        tests:
+          - not_null
