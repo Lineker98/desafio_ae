@@ -38,6 +38,7 @@ with
             , orders.taxamt
             , orders.freight		
             , orders.totaldue   
+            , orders.status
         from {{ ref('stg_sales_order_header') }} as orders
         left join customers on orders.customer_id = customers.customer_id
         left join territory bill_to on orders.billtoaddress_id = bill_to.address_id
