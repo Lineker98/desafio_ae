@@ -20,4 +20,3 @@ models:
         description: Category the sales reason belongs to.
         tests:
           - not_null
-          
