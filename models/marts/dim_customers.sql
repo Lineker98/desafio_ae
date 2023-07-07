@@ -11,13 +11,12 @@ with
         select 
             customer.customer_id
             , store.store_name
-            , concat(person.title, person.firstname, person.middlename, person.lastname) as name
             , person.firstname as firstname
             , person.middlename as middlename
             , person.lastname as lastname
         from {{ ref('stg_customer') }} as customer
         left join person on customer.person_id = person.businessentity_id
-        left join store on customer.person_id = store.salesperson_id
+        left join store on store_id = store.businessentity_id
     )
 
     , transformed as (
