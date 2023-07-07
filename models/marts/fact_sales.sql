@@ -30,6 +30,7 @@ with
             , bill_to.address_sk as bill_to_address_fk
             , ship_to.address_sk as ship_to_address_fk
             , creditcard.creditcard_sk as creditcard_fk
+            , sales_reason.sales_reason_sk as sales_reason_fk
             , orders.orderdate		
             , orders.duedate
             , orders.shipdate
@@ -42,6 +43,7 @@ with
         left join territory bill_to on orders.billtoaddress_id = bill_to.address_id
         left join territory ship_to on orders.shiptoaddress_id = ship_to.address_id
         left join creditcard on orders.creditcard_id = creditcard.creditcard_id
+        left join sales_reason on orders.salesorder_id = sales_reason.salesorder_id
     )
     , orders_detail_with_sk as (
         select
@@ -62,6 +64,7 @@ with
             , orders_with_sk.bill_to_address_fk
             , orders_with_sk.ship_to_address_fk
             , orders_with_sk.creditcard_fk
+            , orders_with_sk.sales_reason_fk
             , orders_with_sk.orderdate		
             , orders_with_sk.duedate
             , orders_with_sk.shipdate
