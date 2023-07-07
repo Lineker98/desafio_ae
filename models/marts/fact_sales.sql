@@ -72,7 +72,8 @@ with
             , orders_with_sk.subtotal	
             , orders_with_sk.taxamt
             , orders_with_sk.freight		
-            , orders_with_sk.totaldue		
+            , orders_with_sk.totaldue
+            , orders_with_sk.status	
             , orders_detail_with_sk.orderqty			
             , orders_detail_with_sk.product_fk
             , orders_detail_with_sk.unitprice			
