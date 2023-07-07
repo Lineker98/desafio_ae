@@ -14,6 +14,7 @@ with
             , cast(taxamt as FLOAT64) as taxamt
             , cast(freight as FLOAT64) as freight		
             , totaldue
+            , status
             -- , territoryid as territory_id
             --, status			
             --, onlineorderflag	

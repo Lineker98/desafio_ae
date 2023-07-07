@@ -45,6 +45,9 @@ sources:
             description: Total spent for freight
           - name: totaldue
             description: Sum of subtotal, taxamt and freight tables
+          - name: status
+            description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled
+
       - name: salesorderdetail
         description: Individual products associated with a specific sales order.
         columns:
